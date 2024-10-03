@@ -19,4 +19,4 @@ I used text-overflow in order for the longer user name in descriptions
 
 This weboage is deployed to GitHub Pages
 
--deployment link -
+[Deployment link](https://ayewal.github.io/se_project_spots/)
