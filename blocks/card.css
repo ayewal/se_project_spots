@@ -32,7 +32,7 @@
 }
 
 .card__like-btn {
-  background-image: url(../images/Like\ Icon.svg);
+  background-image: url(../images/like__btn.png);
   width: 23px;
   height: 20px;
   border: 2px;
