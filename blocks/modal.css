@@ -85,9 +85,13 @@
 
   .modal__container {
     padding: 12px;
+    border-radius: 8px;
   }
 
   .modal__title {
+    width: 106px;
+    height: 20px;
+    font-weight: 500;
     font-size: 20px;
     margin-bottom: 24px;
     margin: 10px 0 34px;
@@ -96,13 +100,16 @@
   .modal__close-btn {
     top: 12px;
     right: 12px;
+    cursor: pointer;
   }
 
   .modal__input {
     margin-bottom: 24px;
+    cursor: pointer;
   }
 
   .modal__submit-btn {
     width: 100%;
+    cursor: pointer;
   }
 }
