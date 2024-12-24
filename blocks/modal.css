@@ -106,6 +106,7 @@
   .modal__input {
     margin-bottom: 24px;
     cursor: pointer;
+    width: 276px;
   }
 
   .modal__submit-btn {
