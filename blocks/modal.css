@@ -24,6 +24,8 @@
   padding: 32px 50px;
   position: relative;
   box-sizing: border-box;
+  border-radius: 8px;
+  height: 480px;
 }
 
 .modal__close-btn {
@@ -40,6 +42,11 @@
   background-color: transparent;
 }
 
+.modal__close-btn:hover {
+  opacity: 100%;
+  cursor: url("../images/Layer\ 1\ 2.svg"), auto;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-family: "poppins", "roboto";
@@ -54,19 +61,26 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  width: 29px;
   font-weight: 500;
   font-size: 16px;
   color: #212121;
   opacity: 70%;
 }
 
+.modal__label:hover {
+  opacity: 100%;
+  cursor: url("../images/Layer\ 1\ 2.svg"), auto;
+}
+
 .modal__input {
   border: 1px solid #212121;
   border-radius: 8px;
-  width: 630px;
-  margin-bottom: 32px;
+  width: 100%;
+  max-width: 630px;
+  margin-bottom: 20px;
   padding: 16px 12px;
+  font-size: 32px;
+  box-sizing: border-box;
 }
 
 .modal__submit-btn {
@@ -81,6 +95,7 @@
 @media screen and (max-width: 627px) {
   .modal {
     padding: 0 10px;
+    gap: 24px;
   }
 
   .modal__container {
@@ -104,9 +119,10 @@
   }
 
   .modal__input {
+    width: 100%;
     margin-bottom: 24px;
     cursor: pointer;
-    width: 276px;
+    font-size: 20px;
   }
 
   .modal__submit-btn {
