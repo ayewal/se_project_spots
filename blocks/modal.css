@@ -25,7 +25,7 @@
   position: relative;
   box-sizing: border-box;
   border-radius: 8px;
-  height: 480px;
+  height: 408px;
 }
 
 .modal__close-btn {
@@ -79,7 +79,7 @@
   max-width: 630px;
   margin-bottom: 20px;
   padding: 16px 12px;
-  font-size: 32px;
+  font-size: 20px;
   box-sizing: border-box;
 }
 
@@ -101,6 +101,7 @@
   .modal__container {
     padding: 12px;
     border-radius: 8px;
+    max-height: 336px;
   }
 
   .modal__title {
@@ -108,8 +109,7 @@
     height: 20px;
     font-weight: 500;
     font-size: 20px;
-    margin-bottom: 24px;
-    margin: 10px 0 34px;
+    margin: 12px 0 24px;
   }
 
   .modal__close-btn {
@@ -122,7 +122,7 @@
     width: 100%;
     margin-bottom: 24px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .modal__submit-btn {
