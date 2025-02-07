@@ -11,13 +11,16 @@
   justify-content: center;
   visibility: hidden;
   padding: 0 20px;
+  opacity: 0;
+  transition: visibility 0s linear 2.5s, opacity 0.5s linear;
 }
 
 .modal_opened {
   visibility: visible;
+  opacity: 1;
 }
 
-.modal__container {
+.modal__content {
   background-color: #fff;
   max-width: 730px;
   width: 100%;
@@ -25,7 +28,21 @@
   position: relative;
   box-sizing: border-box;
   border-radius: 8px;
-  height: 408px;
+}
+
+.modal__content_type_preview {
+  padding: 0;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+}
+
+.modal__image {
+  width: 100%;
+  object-fit: contain;
+  max-width: 88vw;
+  max-height: 80vh;
+  border-radius: 8px;
 }
 
 .modal__close-btn {
@@ -34,12 +51,19 @@
   right: 50px;
   height: 40px;
   width: 40px;
-  background-image: url(/images/Close-Icon.svg);
+  background-image: url(../images/Close-Icon.svg);
   background-size: cover;
   color: #212121;
   opacity: 40%;
   border: none;
   background-color: transparent;
+}
+
+.modal__close_type_preview {
+  background-image: url(../images/close-light.svg);
+  top: 0;
+  right: -52.5px;
+  opacity: 1;
 }
 
 .modal__close-btn:hover {
@@ -92,16 +116,38 @@
   height: 52px;
 }
 
+.modal__caption {
+  font-family: "Poppins";
+  width: fit-content;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 1);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 4px 8px;
+  margin: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .modal__close_type_preview {
+    top: -43px;
+    right: 1px;
+  }
+}
+
 @media screen and (max-width: 627px) {
   .modal {
     padding: 0 10px;
     gap: 24px;
+    background-color: rgba(0, 0, 0, 0.8);
   }
 
-  .modal__container {
+  .modal__content {
     padding: 12px;
     border-radius: 8px;
-    max-height: 336px;
   }
 
   .modal__title {
@@ -110,12 +156,6 @@
     font-weight: 500;
     font-size: 20px;
     margin: 12px 0 24px;
-  }
-
-  .modal__close-btn {
-    top: 12px;
-    right: 12px;
-    cursor: pointer;
   }
 
   .modal__input {
@@ -128,5 +168,15 @@
   .modal__submit-btn {
     width: 100%;
     cursor: pointer;
+  }
+
+  .modal__image {
+    border-radius: 4px;
+  }
+  .modal__caption {
+    font-size: 16px;
+    font-weight: 500;
+    width: 159px;
+    height: 19px;
   }
 }
