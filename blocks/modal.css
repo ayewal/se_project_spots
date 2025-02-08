@@ -12,7 +12,7 @@
   visibility: hidden;
   padding: 0 20px;
   opacity: 0;
-  transition: visibility 0s linear 2.5s, opacity 0.5s linear;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
 }
 
 .modal_opened {
@@ -178,5 +178,11 @@
     font-weight: 500;
     width: 159px;
     height: 19px;
+  }
+
+  @media screen and (max-width: 320px) {
+    .modal {
+      max-width: 320px;
+    }
   }
 }
