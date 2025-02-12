@@ -91,4 +91,10 @@
     background-size: 20px;
     background-repeat: no-repeat;
   }
+
+  @media screen and (max-width: 320px) {
+    .card__title {
+      font-size: 16px;
+    }
+  }
 }

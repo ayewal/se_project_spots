@@ -50,12 +50,12 @@ const editModalDescription = editModal.querySelector(
 );
 
 // Card Modal
-const cardModal = document.querySelector(".modal");
 const addCardModal = document.querySelector("#add-card-modal");
-const cardFormElement = cardModal.querySelector(".modal__form");
-const addCardModalCloseBtn = addCardModal.querySelector(".modal__close-btn");
+const cardFormElement = addCardModal.querySelector(".modal__form");
 const cardNameInput = addCardModal.querySelector("#add-card-name-input");
 const cardLinkInput = addCardModal.querySelector("#add-card-link-input");
+const addCardModalCloseBtn = addCardModal.querySelector(".modal__close-btn");
+const addCardForm = addCardModal.querySelector("form");
 
 //select the modal Preview
 const previewModal = document.querySelector("#preview-modal");
@@ -67,6 +67,10 @@ const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const cardTemplate = document.querySelector("#card-template");
 const cardsList = document.querySelector(".cards__list");
 
+function handleDeleteCard(event) {
+  event.target.closest(".card").remove();
+}
+
 function getCardElement(data) {
   const cardElement = cardTemplate.content
     .querySelector(".card")
@@ -75,7 +79,7 @@ function getCardElement(data) {
   const cardNameEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
-  const card = cardElement.querySelector(".card__delete-icon");
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-icon");
 
   cardNameEl.textContent = data.name || "untitiled card";
   // assign values to the image src and alt
@@ -85,7 +89,7 @@ function getCardElement(data) {
   cardLikeBtn.addEventListener("click", () => {
     cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
-
+  cardDeleteBtn.addEventListener("click", handleDeleteCard);
   //preview
   cardImageEl.addEventListener("click", () => {
     openModal(previewModal); //opens modal preview
@@ -93,16 +97,6 @@ function getCardElement(data) {
     previewModalImageEl.alt = data.name;
     previewModalCaptionEl.textContent = data.name;
   });
-
-  document.addEventListener("click", (event) => {
-    if (event.target.classList.contains("card__delete-icon")) {
-      let card = event.target.closest(".card"); // Find the closest .card parent
-      if (card) {
-        card.remove(); // Remove the card from the DOM
-      }
-    }
-  });
-
   return cardElement;
 }
 
