@@ -117,19 +117,16 @@ function handleEditFormSubmit(evt) {
 
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
+  const form = evt.target;
   //make image appear when adding card
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
   closeModal(addCardModal);
+  form.reset();
 }
 
 // Function to open the image modal with the correct image and title
-function openImageModal(imageSrc, titleText) {
-  modalImage.src = imageSrc;
-  modalTitle.textContent = titleText;
-  pictureModal.classList.add("modal_opened");
-}
 
 addCardModalCloseBtn.addEventListener("click", () => {
   closeModal(addCardModal);
