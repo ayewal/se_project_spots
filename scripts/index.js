@@ -52,6 +52,7 @@ const editModalDescription = editModal.querySelector(
 // Card Modal
 const addCardModal = document.querySelector("#add-card-modal");
 const cardFormElement = addCardModal.querySelector(".modal__form");
+const cardSubmitBtn = addCardModal.querySelector(".modal__submit-btn");
 const cardNameInput = addCardModal.querySelector("#add-card-name-input");
 const cardLinkInput = addCardModal.querySelector("#add-card-link-input");
 const addCardModalCloseBtn = addCardModal.querySelector(".modal__close-btn");
@@ -122,8 +123,9 @@ function handleAddCardSubmit(evt) {
   const inputValues = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardElement = getCardElement(inputValues);
   cardsList.prepend(cardElement);
-  closeModal(addCardModal);
-  form.reset();
+  evt.target.reset();
+  disabledButton(cardSubmitBtn, settings);
+  closeModal(addCardModal, settings);
 }
 
 // Function to open the image modal with the correct image and title
@@ -141,12 +143,17 @@ editModalCloseBtn.addEventListener("click", () => {
 });
 
 profileAddCard.addEventListener("click", () => {
-  openModal(addCardModal);
+  openModal(addCardModal, settings);
 });
 
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescription.value = profileDescription.textContent;
+  resetValidation(
+    editFormElement,
+    [editModalNameInput, editModalDescription],
+    settings
+  );
   openModal(editModal);
 });
 

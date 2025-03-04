@@ -70,6 +70,7 @@
 .modal__close-btn:hover {
   opacity: 100%;
   cursor: url("../images/Layer\ 1\ 2.svg"), auto;
+  color: rgba(33, 33, 33, 1);
 }
 
 .modal__title {
@@ -77,13 +78,13 @@
   font-family: "poppins", "roboto";
   width: 630px;
   height: 40px;
-  font-size: 32px;
+  font-size: 31px;
   font-weight: 500;
   line-height: 1;
 }
 
 .modal__label {
-  display: flex;
+  display: block;
   flex-direction: column;
   gap: 8px;
   font-weight: 500;
@@ -91,6 +92,7 @@
   color: #212121;
   opacity: 70%;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 32px;
 }
 
 .modal__label:hover {
@@ -103,10 +105,27 @@
   border-radius: 8px;
   width: 100%;
   max-width: 630px;
-  margin-bottom: 20px;
+  margin: 8px 0 0;
   padding: 16px 12px;
   font-size: 20px;
   box-sizing: border-box;
+}
+
+.modal__input:hover {
+  border: 1px solid #212121;
+}
+
+.modal__input_type_error {
+  border: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+.modal__error {
+  display: block;
+  font-size: 16px;
+  color: rgba(255, 0, 0, 0.7);
+  font-family: "Poppins";
+  font-weight: 500;
+  margin-top: 8px;
 }
 
 .modal__submit-btn {
@@ -116,6 +135,14 @@
   background-color: #212121;
   color: #fcf5e5;
   height: 52px;
+}
+
+.modal__submit-btn:hover {
+  background-color: rgba(33, 33, 33, 0.8);
+}
+
+.modal__submit-btn_disabled {
+  opacity: 50%;
 }
 
 .modal__caption {
@@ -162,7 +189,6 @@
 
   .modal__input {
     width: 100%;
-    margin-bottom: 24px;
     cursor: pointer;
     font-size: 16px;
   }
@@ -186,6 +212,10 @@
       max-width: 320px;
     }
 
+    .modal__label {
+      margin-bottom: 24px;
+    }
+
     .modal__close-btn {
       top: 13px;
       right: 10px;
@@ -194,6 +224,10 @@
     .modal__close-btn_type_preview {
       top: -43px;
       right: 8px;
+    }
+
+    .modal__submit-btn {
+      margin-bottom: 12px;
     }
   }
 }
