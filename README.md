@@ -14,6 +14,8 @@ I used text-overflow in order for the longer user name in descriptions
 -HTML
 -CSS
 -Responsive design
+-Javascript
+-Git
 
 ## Deployment
 
