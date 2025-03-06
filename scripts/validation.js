@@ -7,6 +7,14 @@ const settings = {
   errorClass: "modal__error",
 };
 
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal")) {
+      modal.classList.remove("modal_opened");
+    }
+  });
+});
+
 const showInputError = (formEl, inputEl, errorMsg, config) => {
   const errorMsgEl = formEl.querySelector(`#${inputEl.id}-error`);
   errorMsgEl.textContent = errorMsg;
