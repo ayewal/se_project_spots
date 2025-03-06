@@ -112,13 +112,24 @@ function closeModal(modal) {
 }
 
 function handleEscapeKey(event) {
+  console.log("closing modal with esc");
+  // check if the key was escape
   if (event.key === "Escape") {
-    const openModal = document.querySelector(".modal_opened");
-    if (openModal) {
-      closeModal(openModal);
-    }
+    // if it was, close the modal
+    const modal = document.querySelector(".modal_opened");
+    // remove the class from that modal
+    closeModal(modal);
   }
 }
+
+// function handleEscapeKey(event) {
+//   if (event.key === "Escape") {
+//     const openModal = document.querySelector(".modal_opened");
+//     if (openModal) {
+//       closeModal(openModal);
+//     }
+//   }
+// }
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
@@ -155,7 +166,7 @@ editModalCloseBtn.addEventListener("click", () => {
 });
 
 profileAddCard.addEventListener("click", () => {
-  openModal(addCardModal, settings);
+  openModal(addCardModal);
 });
 
 profileEditButton.addEventListener("click", () => {
@@ -174,4 +185,12 @@ addCardModal.addEventListener("submit", handleAddCardSubmit);
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
   cardsList.prepend(cardElement);
+});
+
+document.querySelectorAll(".modal").forEach((modal) => {
+  modal.addEventListener("click", (event) => {
+    if (event.target.classList.contains("modal")) {
+      closeModal(modal);
+    }
+  });
 });
