@@ -122,15 +122,6 @@ function handleEscapeKey(event) {
   }
 }
 
-// function handleEscapeKey(event) {
-//   if (event.key === "Escape") {
-//     const openModal = document.querySelector(".modal_opened");
-//     if (openModal) {
-//       closeModal(openModal);
-//     }
-//   }
-// }
-
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
